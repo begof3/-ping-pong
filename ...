@@ -18,8 +18,8 @@ HEIGHT = 400
 BALL_RADIUS = 20
 PAD_WIDTH = 8
 PAD_HEIGHT = 80
-HALF_PAD_WIDTH = PAD_WIDTH / 2
-HALF_PAD_HEIGHT = PAD_HEIGHT / 2
+HALF_PAD_WIDTH = PAD_WIDTH // 2
+HALF_PAD_HEIGHT = PAD_HEIGHT // 2
 ball_pos = [0,0]
 ball_vel = [0,0]
 paddle1_vel = 0
@@ -35,7 +35,7 @@ pygame.display.set_caption('Hello World')
 
 def ball_init(right):
     global ball_pos, ball_vel # these are vectors stored as lists
-    ball_pos = [WIDTH/2,HEIGHT/2]
+    ball_pos = [WIDTH//2,HEIGHT//2]
     horz = random.randrange(2,4)
     vert = random.randrange(1,3)
     
@@ -48,8 +48,8 @@ def ball_init(right):
 def init():
     global paddle1_pos, paddle2_pos, paddle1_vel, paddle2_vel,l_score,r_score  # these are floats
     global score1, score2  # these are ints
-    paddle1_pos = [HALF_PAD_WIDTH - 1,HEIGHT/2]
-    paddle2_pos = [WIDTH +1 - HALF_PAD_WIDTH,HEIGHT/2]
+    paddle1_pos = [HALF_PAD_WIDTH - 1,HEIGHT//2]
+    paddle2_pos = [WIDTH +1 - HALF_PAD_WIDTH,HEIGHT//2]
     l_score = 0
     r_score = 0
     if random.randrange(0,2) == 0:
@@ -63,7 +63,7 @@ def draw(canvas):
     global paddle1_pos, paddle2_pos, ball_pos, ball_vel, l_score, r_score
            
     canvas.fill(BLACK)
-    pygame.draw.line(canvas, WHITE, [WIDTH / 2, 0],[WIDTH / 2, HEIGHT], 1)
+    pygame.draw.line(canvas, WHITE, [WIDTH // 2, 0],[WIDTH // 2, HEIGHT], 1)
     pygame.draw.line(canvas, WHITE, [PAD_WIDTH, 0],[PAD_WIDTH, HEIGHT], 1)
     pygame.draw.line(canvas, WHITE, [WIDTH - PAD_WIDTH, 0],[WIDTH - PAD_WIDTH, HEIGHT], 1)
     pygame.draw.circle(canvas, WHITE, [WIDTH//2, HEIGHT//2], 70, 1)
